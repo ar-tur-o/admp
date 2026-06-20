@@ -14,8 +14,8 @@
         # Arturo's Diagetic Modpack 1.0
         admp = let
           modpack = pkgs.fetchModrinthModpack {
-            src = "./TwoWeeks-1_1_6s.mrpack";
-            packHash = "sha256-QjRfWvmeTeGdUgGBzcE+JYLs2SZORr1mvxgDnBqfUjU=";
+            src = "./TwoWeeks-1_1_7s.mrpack";
+            packHash = "sha256-UPIzlwi4kj5jNzu0QPKXiRG/ULIEdOWgSeDfqsqB7S4=";
             side = "server";
           };
         in {
