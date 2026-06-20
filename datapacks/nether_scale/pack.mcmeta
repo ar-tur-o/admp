@@ -1,0 +1,6 @@
+{
+    "pack": {
+        "pack_format": 48,
+        "description": "Changes the overworld-nether coordinate ratio to 3:1"
+    }
+}

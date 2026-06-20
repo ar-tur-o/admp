@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "I  ",
+    " IF",
+    " PM"
+  ],
+  "key": {
+    "I": {
+      "item": "create:industrial_iron_block"
+    },
+    "F": {
+      "item": "minecraft:fire_charge"
+    },
+    "P": {
+      "item": "create:precision_mechanism"
+    },
+    "M": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "result": {
+    "id": "musketmod:musket"
+  }
+}
