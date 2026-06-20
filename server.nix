@@ -1,4 +1,4 @@
-{pkgs, lib, config, nix-minecraft, self, ...}:
+{self, nix-minecraft}: {pkgs, lib, config, ...}:
 {
   imports = [ nix-minecraft.nixosModules.minecraft-servers ];
 
