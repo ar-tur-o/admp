@@ -2,9 +2,16 @@
 {
   imports = [ nix-minecraft.nixosModules.minecraft-servers ];
 
-  options.myHost.minecraft-admp.enable = lib.mkEnableOption "Minecraft ADMP Server";
+  options.minecraft-admp = {
+    enable = lib.mkEnableOption "Minecraft ADMP Server";
+    packHash = lib.mkOption {
+      type = lib.types.str;
+      default = lib.fakeHash;
+      description = "sha256 hash (SRI format) of the modpack archive.";
+    };
+  };
 
-  config = lib.mkIf config.myHost.minecraft-admp.enable {
+  config = lib.mkIf config.minecraft-admp.enable {
     nixpkgs.overlays = [ nix-minecraft.overlay ];
     services.minecraft-servers = {
       enable = true;
@@ -15,7 +22,7 @@
         admp = let
           modpack = pkgs.fetchModrinthModpack {
             src = "${self}/TwoWeeks-1_1_7s.mrpack";
-            packHash = "sha256-UPIzlwi4kj5jNzu0QPKXiRG/ULIEdOWgSeDfqsqB7S4=";
+            packHash = config.minecraft-admp.packHash;
             side = "server";
           };
         in {
