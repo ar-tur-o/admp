@@ -9,6 +9,9 @@
       default = lib.fakeHash;
       description = "sha256 hash (SRI format) of the modpack archive.";
     };
+    version = lib.mkOption {
+      type = lib.types.str;
+    };
   };
 
   config = lib.mkIf config.minecraft-admp.enable {
@@ -21,7 +24,7 @@
         # Arturo's Diagetic Modpack 1.0
         admp = let
           modpack = pkgs.fetchModrinthModpack {
-            src = "${self}/TwoWeeks-1_1_10.mrpack";
+            src = "${self}/TwoWeeks-${config.minecraft-admp.version}.mrpack";
             packHash = config.minecraft-admp.packHash;
             side = "server";
           };
