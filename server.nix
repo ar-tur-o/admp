@@ -21,7 +21,7 @@
         # Arturo's Diagetic Modpack 1.0
         admp = let
           modpack = pkgs.fetchModrinthModpack {
-            src = "${self}/TwoWeeks-1_1_9.mrpack";
+            src = "${self}/TwoWeeks-1_1_10.mrpack";
             packHash = config.minecraft-admp.packHash;
             side = "server";
           };
